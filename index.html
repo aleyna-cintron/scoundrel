@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoundrel</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Card Game</h1>
+        <p id="hearts"></p>
+        <p id="diamonds"></p>
+        <p id="spades"></p>
+        <p id="clubs"></p>
+        <div id="cardContainer" style="display: flex; gap: 16px; align-items: center;">
+            <img src="back.png" height="200">
+            <div id="dynamicCards" style="display: flex; gap: 16px;"></div>
+          </div>
+        <h1>hp: <span id="hpVal"></span></h1>
+        <button type="button" id="runBtn" enabled>Run Away</button>
+        <button type="button" id="nxtRuneBtn" disabled>Next Rune</button>
+        <div id="weaponContainer"></div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
