@@ -17,9 +17,14 @@
             <div id="dynamicCards" style="display: flex; gap: 16px;"></div>
           </div>
         <h1>hp: <span id="hpVal"></span></h1>
+        <h1>Cards Left in Deck: <span id="cardsLeft"></span></h1>
+
         <button type="button" id="runBtn" enabled>Run Away</button>
-        <button type="button" id="nxtRuneBtn" disabled>Next Rune</button>
-        <div id="weaponContainer"></div>
+        <button type="button" id="nxtRoomBtn" disabled>Next Room</button>
+        <div id="weaponContainer" style="display: flex; gap: 16px; align-items: center;" >
+            <div id="weaponSlot"></div>
+            <div id="slainMonsterContainer"></div>
+        </div>
     </div>
     <script src="script.js" defer></script>
 </body>
