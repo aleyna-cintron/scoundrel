@@ -4,27 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoundrel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="grain-overlay"></div>
     <div id="container">
-        <h1>Card Game</h1>
-        <p id="hearts"></p>
-        <p id="diamonds"></p>
-        <p id="spades"></p>
-        <p id="clubs"></p>
-        <div id="cardContainer" style="display: flex; gap: 16px; align-items: center;">
-            <img src="back.png" height="200">
-            <div id="dynamicCards" style="display: flex; gap: 16px;"></div>
-          </div>
-        <h1>hp: <span id="hpVal"></span></h1>
-        <h1>Cards Left in Deck: <span id="cardsLeft"></span></h1>
-
-        <button type="button" id="runBtn" enabled>Run Away</button>
-        <button type="button" id="nxtRoomBtn" disabled>Next Room</button>
-        <div id="weaponContainer" style="display: flex; gap: 16px; align-items: center;" >
-            <div id="weaponSlot"></div>
-            <div id="slainMonsterContainer"></div>
+        <div id="eyeContainer">
+            <img src="eye.png" height="150">
+            <h1>Scoundrel</h1>
         </div>
+        <div id="cardContainer">
+            <h1 class="roomTxt">ROOM</h1>
+            <div class="room" style="display: flex; gap: 16px; align-items: center;">
+                <img src="back.png" height="200">
+                <div id="dynamicCards" style="display: flex; gap: 16px;"></div>
+            </div>
+            <div class="hpContainer">
+                <img class="heart" src="heart.png" height="65" width="">
+                <h1>HP: <span id="hpVal"></span></h1>
+            </div>
+            <div id="weaponContainer">
+                <img class="heart" src="bareFist.png" height="75" width="65">
+                <h1>WEAPON:</h1>
+                <p id="weaponTxt"></p>
+                <img id="wep" class="heart" src="diamond.png" height="35" width="">
+            </div>
+            <div id="cardLeftContainer">
+                <img src="cardsL.png" height="40" width="">
+                <h1>CARDS LEFT: <span id="cardsLeft"></span></h1>
+            </div>
+        </div>  
+        <div id="slainMonsterContainer"></div>
+        <div id="btnContainer">
+            <button type="button" id="runBtn" enabled>RUN AWAY</button>
+            <button type="button" id="nxtRoomBtn" disabled>NEXT ROOM</button> 
+            <button type="button" id="startNewGameBtn">NEW GAME</button>
+        </div> 
     </div>
     <script src="script.js" defer></script>
 </body>

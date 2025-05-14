@@ -133,14 +133,7 @@ function displayRoom(room) {
     if (room.length < 2){
         // Enable the "next room" button if there is only 1 card left
         nxtRoomBtn.disabled = false;
-    }else if(room.length < 1){
-        runBtn.style.visibility = 'visible';
-    }
-    else{
-        nxtRoomBtn.disabled = true;
-        runBtn.style.visibility = 'hidden';
-    }
-
+    }else nxtRoomBtn.disabled = true;
 }
 
 // Sets up a new room with cards from the deck.
@@ -206,13 +199,13 @@ function handleMonsterCard(card){
     } 
 
     // Case 2: Player has a weapon but has not yet slain any monsters
-    else if (!slainMonster){
+    if (!slainMonster){
         // Engage in combat using the current weapon
         handleWeaponAttack(card)
     }
 
     // Case 3: Player has slain monsters with the currently equipped weapon
-    else if (slainMonster) {
+    if (slainMonster) {
         // Check if the current monster is weaker than the previously slain monster
         if (card.rank < slainMonster.rank){
             // Run function for combat with weapon
@@ -326,49 +319,45 @@ cardContainer.addEventListener("click", (event) => {
                 handleDiamondsCard(card); // Handle weapon cards (diamonds)
                 break;
         }
+
+        // Hide the run button after a card interaction
+        runBtn.style.visibility = 'hidden';
     }
 });
 
 // Updates the weapon slot display based on the player's current weapon.
 function displayWeapon(playerWep) {
-    // const weaponSlot = document.getElementById("weaponSlot"); // Get the weapon slot element
-    // weaponSlot.innerHTML = ""; // Clear any existing content in the weapon slot
-    const weaponTxt = document.getElementById("weaponTxt"); // Get the weapon slot element
-    const wepImg = document.getElementById("wep")
+    const weaponSlot = document.getElementById("weaponSlot"); // Get the weapon slot element
+    weaponSlot.innerHTML = ""; // Clear any existing content in the weapon slot
 
     // Create image elements for the weapon and its damage card
-    // const weaponImg = document.createElement("img");
-    // const diamondCardImg = document.createElement("img");
+    const weaponImg = document.createElement("img");
+    const diamondCardImg = document.createElement("img");
 
     // Check if the player has a weapon equipped
     if (hasWeapon) {
-        weaponTxt.innerHTML = `${playerWep.rank}`; // Clear any existing content in the weapon slot
-        wepImg.style.visibility = "visible";
-
         // Display the weapon image (sword)
-        // weaponImg.id = "weapon";
-        // weaponImg.src = "sword.png";
-        // weaponImg.alt = "sword";
-        // weaponImg.style.height = "200px";
+        weaponImg.id = "weapon";
+        weaponImg.src = "sword.png";
+        weaponImg.alt = "sword";
+        weaponImg.style.height = "200px";
 
-        // // Display the weapon's damage card (based on its rank and suit)
-        // diamondCardImg.src = `./PNG-cards-1.3/${playerWep.rank}_of_${playerWep.suit}.png`;
-        // diamondCardImg.style.height = "200px";
+        // Display the weapon's damage card (based on its rank and suit)
+        diamondCardImg.src = `./PNG-cards-1.3/${playerWep.rank}_of_${playerWep.suit}.png`;
+        diamondCardImg.style.height = "200px";
 
-        // // Append both the weapon image and diamond card image to the weapon slot
-        // weaponSlot.appendChild(weaponImg);
-        // weaponSlot.appendChild(diamondCardImg);
+        // Append both the weapon image and diamond card image to the weapon slot
+        weaponSlot.appendChild(weaponImg);
+        weaponSlot.appendChild(diamondCardImg);
     } else {
-        wepImg.style.visibility = "hidden";
-        weaponTxt.innerHTML = "Unarmed"; // Clear any existing content in the weapon slot
         // Display bare fists if no weapon is equipped
-        // weaponImg.id = "weapon";
-        // weaponImg.src = "bareFist.png";
-        // weaponImg.alt = "bare fist";
-        // weaponImg.style.height = "75px";
+        weaponImg.id = "weapon";
+        weaponImg.src = "bareFist.png";
+        weaponImg.alt = "bare fist";
+        weaponImg.style.height = "75px";
 
         // Append the bare fist image to the weapon slot
-        // weaponSlot.appendChild(weaponImg);
+        weaponSlot.appendChild(weaponImg);
     }
 }
 
