@@ -6,6 +6,7 @@ nxtRoomBtn.addEventListener("click", () => newRoom(deck));
 const startNewGameBtn = document.getElementById("startNewGameBtn");
 startNewGameBtn.addEventListener("click", () => startNewGame());
 let cardContainer = document.getElementById("cardContainer");
+let cardsLeft = document.getElementById("cardsLeft");
 
 // Run on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -127,18 +128,16 @@ function displayRoom(room) {
         cardImg.src = `./PNG-cards-1.3/${room[i].rank}_of_${room[i].suit}.png`; // Card image source 
         cardImg.alt = `${room[i].rank} of ${room[i].suit}`; // Set an alt for card image
         cardImg.style.height = "200px"; // Set image size
+        cardImg.style.width = "140px";
         dynamicCards.appendChild(cardImg); // Add the image to the container
     };
     // Checks if room array contains 1 card
     if (room.length < 2){
         // Enable the "next room" button if there is only 1 card left
         nxtRoomBtn.disabled = false;
-    }else if(room.length < 1){
-        runBtn.style.visibility = 'visible';
     }
     else{
         nxtRoomBtn.disabled = true;
-        runBtn.style.visibility = 'hidden';
     }
 
 }
@@ -147,6 +146,9 @@ function displayRoom(room) {
 function newRoom(deck) {
     // Array to hold the cards removed from the deck
     let removedCards = [];
+
+    // Give players the option to run away from a room
+    runBtn.style.visibility = "visible";
 
     // If there is 1 card remaining in the room, add 3 more cards
     if (room.length === 1) {
@@ -159,6 +161,7 @@ function newRoom(deck) {
         prevRoom.push(...removedCards); // Keep track of previous room's cards 
     }
 
+    cardsLeft.innerHTML = `${deck.length}/42`
     // Render the updated room of cards to the screen
     displayRoom(room); 
 }
@@ -171,6 +174,7 @@ function startNewGame(){
     newRoom(deck);
     hpTxt.innerHTML = hp;
     displayWeapon()
+    displaySlainMonsters();
 }
  
 // Function that allows the player to run away from the current room.
@@ -327,6 +331,7 @@ cardContainer.addEventListener("click", (event) => {
                 break;
         }
     }
+    runBtn.style.visibility = "hidden";
 });
 
 // Updates the weapon slot display based on the player's current weapon.

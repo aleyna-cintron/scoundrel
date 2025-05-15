@@ -1,5 +1,5 @@
 body {
-    background-color: #1a1a1a; /* base color */
+    background-color: #1a0f1f ; /* base color */
     display: flex;
     justify-content: center;  /* horizontal */
     align-items: center;      /* vertical */
@@ -7,7 +7,11 @@ body {
     font-weight:800;
     font-optical-sizing: auto;
     font-style: normal;
-    color:#d9b36f
+    color:#c0a8b9  
+}
+#gameName {
+    color: #e64545;
+    text-shadow: 0 0 3px rgba(255, 60, 100, 0.5);
 }
 .grain-overlay {
     position: fixed;
@@ -24,8 +28,8 @@ body {
 #cardContainer {
     border-width: 4px;
     border-style: solid;
-    border-color: #472611;
-    background: #1a1a1a; /* dark background like in your game */
+    border-color: #5c256b ;
+    background: #1a0f1f ; /* dark background like in your game */
     padding: 20px;
     /* color: #d9b36f; */
     display: flex; 
@@ -34,17 +38,33 @@ body {
     padding: 2rem;
     padding-top: 0;
     position: relative;
-      border: 4px solid #472611;
+      border: 4px solid #5c256b;
       clip-path: polygon(
         10px 0%, calc(100% - 10px) 0%, 100% 10px,
         100% calc(100% - 10px), calc(100% - 10px) 100%,
         10px 100%, 0% calc(100% - 10px), 0% 10px
     );
+    /* background-color: #2a1531;
+    padding: 6px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px #5c256b; */
+    width: 45rem;
+}
+#cardsLeft {
+    line-height: 2px;
+    margin: 0;
+    margin-bottom: 15px;
+    margin-left: 85px;
 }
 #weaponContainer, #cardLeftContainer {
     display: flex; 
     text-align: center;
     align-items: center;
+    line-height: 2px;
+    margin-top: 10px;
+}
+#weaponContainer h1, p{
+    margin-top: 35px;
 }
 #btnContainer {
     display: flex;
@@ -58,10 +78,21 @@ body {
 }
 .hpContainer {
     display: flex;
+    line-height: 2px;
+
 }
 .heart{
     vertical-align: middle;
     margin:0;
+    justify-self: center;
+    margin-right: 10px;
+}
+.wep {
+    vertical-align: middle;
+    margin:0;
+    justify-self: center;
+    margin-left: 3px;
+    margin-right: 10px;
 }
 #eyeContainer{
     display: flex;
@@ -74,13 +105,13 @@ body {
     background-color: transparent;
     border-width: 4px;
     border-style: solid;
-    border-color: #472611;
-    color:#d9b36f;
+    border-color: #5c256b;
+    color:#e64545 ;
     padding: 1.25rem;
     font-size: large;
     font-weight: 900;
     position: relative;
-      border: 4px solid #472611;
+      border: 4px solid #5c256b;
       clip-path: polygon(
         10px 0%, calc(100% - 10px) 0%, 100% 10px,
         100% calc(100% - 10px), calc(100% - 10px) 100%,
@@ -88,7 +119,8 @@ body {
     );
 }
 #runBtn:hover, #nxtRoomBtn:hover, #startNewGameBtn:hover{
-    color:pink;
+    color:#c0a8b9;
+    border-color: #e64545;
 }
 .room{
     margin-bottom: 1rem;
@@ -100,4 +132,7 @@ body {
 }
 #weaponTxt {
     margin-left: 10px;
+}
+.hpContainer h1{
+    color: #e64545;
 }
