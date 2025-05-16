@@ -146,6 +146,7 @@ function displayRoom(room) {
 function newRoom(deck) {
     // Array to hold the cards removed from the deck
     let removedCards = [];
+    usedPot = null;
 
     // Give players the option to run away from a room
     runBtn.style.visibility = "visible";
@@ -392,6 +393,7 @@ function displaySlainMonsters(slainMonsters) {
         slainMonsterImg.src = `./PNG-cards-1.3/${slainMonster.rank}_of_${slainMonster.suit}.png`;
         slainMonsterImg.style.height = "200px"; // Set image height
         slainMonsterImg.style.margin = "5px"; // Add some spacing between cards
+        slainMonsterContainer.style.height = "200px"
         slainMonsterContainer.appendChild(slainMonsterImg);
     });
 }   

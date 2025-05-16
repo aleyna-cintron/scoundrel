@@ -9,9 +9,20 @@ body {
     font-style: normal;
     color:#c0a8b9  
 }
-#gameName {
+#tombstoneImg {
+    height: 50px;
+    vertical-align: middle;
+    margin:0;
+    justify-self: center;
+}
+#graveyardContainer {
+   margin-top: 10px;
+}
+#gameName, #graveyardTxt {
     color: #e64545;
     text-shadow: 0 0 3px rgba(255, 60, 100, 0.5);
+    display: inline;
+    vertical-align: middle;
 }
 .grain-overlay {
     position: fixed;
@@ -100,6 +111,16 @@ body {
     text-align: center;
     align-items: center;
     font-size: 35px;
+}
+#eyeContainer img{
+    margin-right: 15px;
+}
+#slainMonsterContainer {
+    /* height: 200px; */
+    margin-bottom: 10px;
+}
+#btnContainer{
+    margin-top: 25px;
 }
 #runBtn, #nxtRoomBtn, #startNewGameBtn{
     background-color: transparent;

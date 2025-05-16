@@ -11,13 +11,13 @@
     <div class="grain-overlay"></div>
     <div id="container">
         <div id="eyeContainer">
-            <img src="eye.png" height="80">
+            <img src="eye.png" height="100">
             <h1 id="gameName">Scoundrel</h1>
         </div>
         <div id="cardContainer">
             <h1 class="roomTxt">ROOM</h1>
             <div class="room" style="display: flex; gap: 16px; align-items: center;">
-                <img src="cardsL.png" height="200" width="140px">
+                <img src="cardsL.png" height="220" width="160px">
                 <div id="dynamicCards" style="display: flex; gap: 2px;"></div>
             </div>
             <p id="cardsLeft">20/52</p>
@@ -31,12 +31,17 @@
                 <p id="weaponTxt"></p>
                 <img id="wep" class="heart" src="diamond.png" height="35" width="">
             </div>
-        </div>  
+        </div>
+        <div id="graveyardContainer">
+            <img id="tombstoneImg"src="tombstone.png"/>
+            <h1 id="graveyardTxt">Graveyard</h1>
+        </div>
+        
         <div id="slainMonsterContainer"></div>
         <div id="btnContainer">
+            <button type="button" id="startNewGameBtn">NEW GAME</button>
             <button type="button" id="runBtn" enabled>RUN AWAY</button>
             <button type="button" id="nxtRoomBtn" disabled>NEXT ROOM</button> 
-            <button type="button" id="startNewGameBtn">NEW GAME</button>
         </div> 
     </div>
     <script src="script.js" defer></script>
