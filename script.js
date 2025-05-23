@@ -125,7 +125,7 @@ function displayRoom(room) {
     for (let i = 0; i < room.length; i++) {
         const cardImg = document.createElement("img");
         cardImg.id = `card${i}`; // Assign an ID based on position in array
-        cardImg.src = `./PNG-cards-1.3/${room[i].rank}_of_${room[i].suit}.png`; // Card image source 
+        cardImg.src = `./cards/${room[i].rank}_of_${room[i].suit}.png`; // Card image source 
         cardImg.alt = `${room[i].rank} of ${room[i].suit}`; // Set an alt for card image
         cardImg.style.height = "200px"; // Set image size
         cardImg.style.width = "140px";
